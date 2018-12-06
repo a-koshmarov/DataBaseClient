@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.SQLServerDialect</property>
+        <property name="connection.url">jdbc:sqlserver://localhost:49172;database=Laboratory;integratedSecurity=true</property>
+        <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+
+        <!-- DB schema will be updated if needed -->
+        <!--<property name="hbm2ddl.auto">update</property>-->
+        <mapping class="main.java.entities.ClientDAO"/>
+        <mapping class="main.java.entities.EmployeeDAO"/>
+        <mapping class="main.java.entities.FilmDAO"/>
+        <mapping class="main.java.entities.LabDAO"/>
+        <mapping class="main.java.entities.LabOrderDAO"/>
+    </session-factory>
+</hibernate-configuration>
