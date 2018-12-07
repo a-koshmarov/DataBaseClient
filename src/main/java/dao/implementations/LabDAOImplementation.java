@@ -3,13 +3,13 @@ package main.java.dao.daoImplementation;
 import main.java.dao.daoInterface.LabDAO;
 import main.java.dao.SessionConnector;
 import main.java.entities.LabEntity;
+import org.hibernate.Transaction;
 
 import java.util.List;
 
 public class LabDAOImplementation extends SessionConnector implements LabDAO {
 
     public void add(LabEntity entity) {
-
     }
 
     public void update(LabEntity entity) {

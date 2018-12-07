@@ -1,7 +1,5 @@
 package main.java.dao.daoInterface;
 
-import org.hibernate.Session;
-
 import java.util.List;
 
 public interface DAO<T> {

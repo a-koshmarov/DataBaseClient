@@ -1,4 +1,4 @@
-package main.java;
+package main.java.dao;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
