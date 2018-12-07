@@ -4,16 +4,15 @@ import main.java.HibernateSessionFactory;
 import org.hibernate.Session;
 
 public class SessionConnector{
-    private Session session;
+    protected Session session;
 
-    public Session openSession(){
-        session = HibernateSessionFactory.getSessionFactory().openSession();
+    protected Session openSession(){
+        session = HibernateSessionFactory.getSessionFactory().getCurrentSession();
         return session;
     }
 
-    public void closeSession(){
+    protected void closeSession(){
         session.close();
+        HibernateSessionFactory.shutdown();
     }
-
-    // TODO: 06.12.2018 add abstract methods for specific entities (e.g. getOrdersOfEmployee)
 }
