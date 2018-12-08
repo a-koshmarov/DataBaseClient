@@ -1,5 +1,3 @@
-package main.java;
-
 import dao.HibernateSessionFactory;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
