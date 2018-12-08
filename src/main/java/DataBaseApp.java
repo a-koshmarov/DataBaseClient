@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Main extends Application {
+public class DataBaseApp extends Application {
 
     public void start(Stage stage) throws IOException {
         Parent root=(Parent) FXMLLoader.load(getClass().getClassLoader().getResource("LabView.fxml"));

@@ -1,9 +1,12 @@
 package view.tableViews;
 
 import dao.entities.ClientEntity;
+import dao.entities.FilmEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -14,21 +17,16 @@ import java.util.Date;
 
 public class ClientTableView implements GenericTableView {
 
-    private GenericLabService<ClientEntity> service;
     private ObservableList<ClientEntity> entities;
-    private TableView<ClientEntity> tableView;
-    private BarChart barChart;
 
-    public ClientTableView(GenericLabService<ClientEntity> service) {
-        this.service = service;
+    public ClientTableView(GenericLabService<ClientEntity> service){
+        this.entities = FXCollections.observableList(service.getAll());
     }
 
     @SuppressWarnings("unchecked")
     public TableView getTableView() {
-        tableView = new TableView<ClientEntity>();
+        TableView<ClientEntity> tableView = new TableView<ClientEntity>();
         tableView.setEditable(true);
-
-        entities = FXCollections.observableList(service.getAll());
 
         TableColumn idCol = new TableColumn("Card number");
         idCol.setCellValueFactory(
@@ -64,7 +62,22 @@ public class ClientTableView implements GenericTableView {
         return tableView;
     }
 
+    @SuppressWarnings("unchecked")
     public BarChart getBarChart() {
-        return null;
+        final CategoryAxis xAxis = new CategoryAxis();
+        xAxis.setLabel("Full name");
+
+        final NumberAxis yAxis = new NumberAxis();
+        yAxis.setLabel("Discount amount, %");
+
+        XYChart.Series series = new XYChart.Series();
+
+        BarChart<String, Number> barChart = new BarChart<String, Number>(xAxis, yAxis);
+        for (ClientEntity entity : entities){
+            series.getData().add(new XYChart.Data(entity.getFullName(), entity.getDiscount()));
+        }
+
+        barChart.getData().addAll(series);
+        return barChart;
     }
 }
