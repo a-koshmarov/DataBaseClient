@@ -1,8 +1,9 @@
-package main.java.entities;
+package dao.entities;
 
 import javax.persistence.*;
-import java.sql.Date;
+
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Table(name = "LabOrder", schema = "dbo", catalog = "Laboratory")
@@ -10,7 +11,7 @@ public class LabOrderEntity {
     private int orderId;
     private int price;
     private Integer discountedPrice;
-    private Timestamp dateOfPurchase;
+    private Date dateOfPurchase;
     private int status;
     private Date completionTime;
 
@@ -44,13 +45,13 @@ public class LabOrderEntity {
         this.discountedPrice = discountedPrice;
     }
 
-    @Basic
+    @Temporal(TemporalType.DATE)
     @Column(name = "Date_of_purchase", nullable = true)
-    public Timestamp getDateOfPurchase() {
+    public Date getDateOfPurchase() {
         return dateOfPurchase;
     }
 
-    public void setDateOfPurchase(Timestamp dateOfPurchase) {
+    public void setDateOfPurchase(Date dateOfPurchase) {
         this.dateOfPurchase = dateOfPurchase;
     }
 
@@ -64,7 +65,7 @@ public class LabOrderEntity {
         this.status = status;
     }
 
-    @Basic
+    @Temporal(TemporalType.DATE)
     @Column(name = "Completion_time", nullable = true)
     public Date getCompletionTime() {
         return completionTime;
