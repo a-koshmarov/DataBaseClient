@@ -1,4 +1,4 @@
-package main.java.dao.entities;
+package dao.entities;
 
 import javax.persistence.*;
 
@@ -86,5 +86,10 @@ public class LabEntity {
         result = 31 * result + employeesNumber;
         result = 31 * result + (workingHours != null ? workingHours.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString(){
+        return String.format("%s %s %s %S %s", labId, labName, labAddress, employeesNumber, workingHours);
     }
 }

@@ -1,8 +1,9 @@
-package main.java.dao.entities;
+package dao.entities;
 
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Table(name = "Client", schema = "dbo", catalog = "Laboratory")
@@ -11,8 +12,8 @@ public class ClientEntity {
     private String fullName;
     private String phone;
     private String email;
-    private Timestamp dateRecieved;
-    private Timestamp dateOfBirth;
+    private Date dateRecieved;
+    private Date dateOfBirth;
     private Integer discount;
 
     @Id
@@ -55,23 +56,23 @@ public class ClientEntity {
         this.email = email;
     }
 
-    @Basic
+    @Temporal(TemporalType.DATE)
     @Column(name = "Date_recieved", nullable = true)
-    public Timestamp getDateRecieved() {
+    public Date getDateRecieved() {
         return dateRecieved;
     }
 
-    public void setDateRecieved(Timestamp dateRecieved) {
+    public void setDateRecieved(Date dateRecieved) {
         this.dateRecieved = dateRecieved;
     }
 
-    @Basic
+    @Temporal(TemporalType.DATE)
     @Column(name = "Date_of_birth", nullable = true)
-    public Timestamp getDateOfBirth() {
+    public Date getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Timestamp dateOfBirth) {
+    public void setDateOfBirth(Date dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

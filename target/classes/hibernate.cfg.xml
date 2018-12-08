@@ -8,12 +8,14 @@
         <property name="connection.url">jdbc:sqlserver://localhost:49172;database=Laboratory;integratedSecurity=true</property>
         <property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
 
+        <property name="hibernate.current_session_context_class">thread</property>
+
         <!-- DB schema will be updated if needed -->
         <!--<property name="hbm2ddl.auto">update</property>-->
-        <mapping class="main.java.dao.ClientDAO"/>
-        <mapping class="main.java.dao.EmployeeDAO"/>
-        <mapping class="main.java.dao.FilmDAO"/>
-        <mapping class="main.java.dao.LabDAO"/>
-        <mapping class="main.java.dao.LabOrderDAO"/>
+        <mapping class="dao.entities.ClientEntity"/>
+        <mapping class="dao.entities.EmployeeEntity"/>
+        <mapping class="dao.entities.FilmEntity"/>
+        <mapping class="dao.entities.LabEntity"/>
+        <mapping class="dao.entities.LabOrderEntity"/>
     </session-factory>
 </hibernate-configuration>

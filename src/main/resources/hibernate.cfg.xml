@@ -12,10 +12,10 @@
 
         <!-- DB schema will be updated if needed -->
         <!--<property name="hbm2ddl.auto">update</property>-->
-        <mapping class="main.java.entities.ClientEntity"/>
-        <mapping class="main.java.entities.EmployeeEntity"/>
-        <mapping class="main.java.entities.FilmEntity"/>
-        <mapping class="main.java.entities.LabEntity"/>
-        <mapping class="main.java.entities.LabOrderEntity"/>
+        <mapping class="dao.entities.ClientEntity"/>
+        <mapping class="dao.entities.EmployeeEntity"/>
+        <mapping class="dao.entities.FilmEntity"/>
+        <mapping class="dao.entities.LabEntity"/>
+        <mapping class="dao.entities.LabOrderEntity"/>
     </session-factory>
 </hibernate-configuration>

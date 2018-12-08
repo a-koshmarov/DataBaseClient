@@ -1,14 +1,15 @@
-package main.java.dao.entities;
+package dao.entities;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.util.Date;
 
 @Entity
 @Table(name = "Employee", schema = "dbo", catalog = "Laboratory")
 public class EmployeeEntity {
     private int employeeId;
     private String fullName;
-    private Timestamp dateOfEmployment;
+    private Date dateOfEmployment;
     private String position;
     private int orderCount;
 
@@ -32,13 +33,13 @@ public class EmployeeEntity {
         this.fullName = fullName;
     }
 
-    @Basic
+    @Temporal(TemporalType.DATE)
     @Column(name = "Date_of_employment", nullable = true)
-    public Timestamp getDateOfEmployment() {
+    public Date getDateOfEmployment() {
         return dateOfEmployment;
     }
 
-    public void setDateOfEmployment(Timestamp dateOfEmployment) {
+    public void setDateOfEmployment(Date dateOfEmployment) {
         this.dateOfEmployment = dateOfEmployment;
     }
 

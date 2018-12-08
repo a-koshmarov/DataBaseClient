@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<TabPane prefHeight="520.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Controller">
+   <tabs>
+      <Tab closable="false" text="Lab">
+         <content>
+            <SplitPane fx:id="labPane" prefHeight="200.0" prefWidth="200.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </SplitPane>
+         </content>
+      </Tab>
+      <Tab closable="false" text="LabOrder">
+         <content>
+            <SplitPane fx:id="labOrderPane" prefHeight="200.0" prefWidth="200.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </SplitPane>
+         </content>
+      </Tab>
+      <Tab closable="false" text="Client">
+         <content>
+            <SplitPane fx:id="clientPane" prefHeight="200.0" prefWidth="200.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </SplitPane>
+         </content>
+      </Tab>
+      <Tab closable="false" text="Employee">
+         <content>
+            <SplitPane fx:id="employeePane" prefHeight="200.0" prefWidth="200.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </SplitPane>
+         </content>
+      </Tab>
+      <Tab closable="false" text="Film">
+         <content>
+            <SplitPane fx:id="filmPane" prefHeight="200.0" prefWidth="200.0">
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
+            </SplitPane>
+         </content>
+      </Tab>
+   </tabs>
+</TabPane>
