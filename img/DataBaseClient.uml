@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement />
+  <nodes>
+    <node x="687.5233333333333" y="778.0">view.tableViews.EmployeeTableView</node>
+    <node x="1899.5085714285717" y="134.0">dao.entities.LabOrderEntity</node>
+    <node x="1598.1752380952385" y="167.0">dao.entities.FilmEntity</node>
+    <node x="868.4999999999998" y="343.5">service.GenericLabService</node>
+    <node x="406.5233333333333" y="778.0">view.tableViews.ClientTableView</node>
+    <node x="1727.1483333333333" y="778.0">view.tableViews.LabOrderTableView</node>
+    <node x="1079.6310714285714" y="985.0">view.Controller</node>
+    <node x="2081.4252380952385" y="767.0">dao.HibernateSessionFactory</node>
+    <node x="1100.1614285714286" y="778.0">view.tableViews.LabTableView</node>
+    <node x="1454.1483333333333" y="778.0">view.tableViews.FilmTableView</node>
+    <node x="139.0" y="789.0">service.GenericLabServiceImpl</node>
+    <node x="1075.0233333333333" y="156.0">dao.entities.LabEntity</node>
+    <node x="555.0833333333333" y="167.0">dao.entities.EmployeeEntity</node>
+    <node x="1367.279404761905" y="332.5">view.tableViews.GenericTableView</node>
+    <node x="291.2499999999998" y="101.0">dao.entities.ClientEntity</node>
+    <node x="126.5" y="0.0">dao.GenericLabDAO</node>
+    <node x="0.0" y="321.0">dao.GenericLabDAOImpl</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="view.Controller" target="view.tableViews.LabOrderTableView">
+      <point x="49.25" y="-81.0" />
+      <point x="1227.3810714285714" y="935.0" />
+      <point x="1867.6483333333333" y="935.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="view.Controller" target="view.tableViews.FilmTableView">
+      <point x="35.17857142857133" y="-81.0" />
+      <point x="1213.3096428571428" y="925.0" />
+      <point x="1580.6483333333333" y="925.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="service.GenericLabServiceImpl" target="dao.GenericLabDAOImpl">
+      <point x="-65.66666666666674" y="-37.0" />
+      <point x="171.83333333333326" y="747.0" />
+      <point x="113.5" y="747.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="view.Controller" target="dao.entities.FilmEntity">
+      <point x="63.32142857142867" y="-81.0" />
+      <point x="1241.4525" y="945.0" />
+      <point x="2018.6483333333333" y="945.0" />
+      <point x="2018.6483333333333" y="657.0" />
+      <point x="1815.6752380952385" y="657.0" />
+      <point x="87.0" y="202.0" />
+    </edge>
+    <edge source="view.tableViews.FilmTableView" target="view.tableViews.GenericTableView">
+      <point x="-31.625" y="-48.0" />
+      <point x="1549.0233333333333" y="747.0" />
+      <point x="1517.279404761905" y="747.0" />
+      <point x="50.0" y="36.5" />
+    </edge>
+    <edge source="view.tableViews.LabOrderTableView" target="view.tableViews.GenericTableView">
+      <point x="-35.125" y="-48.0" />
+      <point x="1832.5233333333333" y="667.0" />
+      <point x="1550.6127380952385" y="667.0" />
+      <point x="83.33333333333337" y="36.5" />
+    </edge>
+    <edge source="view.tableViews.LabTableView" target="view.tableViews.GenericTableView">
+      <point x="93.75" y="-48.0" />
+      <point x="1318.9114285714286" y="737.0" />
+      <point x="1450.6127380952385" y="737.0" />
+      <point x="-16.66666666666663" y="36.5" />
+    </edge>
+    <edge source="service.GenericLabServiceImpl" target="service.GenericLabService">
+      <point x="65.66666666666652" y="-37.0" />
+      <point x="303.1666666666665" y="687.0" />
+      <point x="879.0714285714284" y="687.0" />
+      <point x="-63.42857142857133" y="25.5" />
+    </edge>
+    <edge source="view.tableViews.ClientTableView" target="view.tableViews.GenericTableView">
+      <point x="97.875" y="-48.0" />
+      <point x="634.8983333333333" y="717.0" />
+      <point x="1383.9460714285715" y="717.0" />
+      <point x="-83.33333333333337" y="36.5" />
+    </edge>
+    <edge source="view.Controller" target="dao.entities.LabOrderEntity">
+      <point x="77.39285714285711" y="-81.0" />
+      <point x="1255.5239285714285" y="955.0" />
+      <point x="2070.9252380952385" y="955.0" />
+      <point x="2070.9252380952385" y="747.0" />
+      <point x="2098.6752380952385" y="747.0" />
+      <point x="79.66666666666674" y="235.0" />
+    </edge>
+    <edge source="view.tableViews.LabTableView" target="service.GenericLabService">
+      <point x="-93.75" y="-48.0" />
+      <point x="1131.4114285714286" y="697.0" />
+      <point x="963.6428571428569" y="697.0" />
+      <point x="21.14285714285711" y="25.5" />
+    </edge>
+    <edge source="view.Controller" target="view.tableViews.ClientTableView">
+      <point x="-49.25" y="-81.0" />
+      <point x="1128.8810714285714" y="935.0" />
+      <point x="537.0233333333333" y="935.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="view.tableViews.LabOrderTableView" target="service.GenericLabService">
+      <point x="-105.375" y="-48.0" />
+      <point x="1762.2733333333333" y="677.0" />
+      <point x="1005.9285714285711" y="677.0" />
+      <point x="63.42857142857133" y="25.5" />
+    </edge>
+    <edge source="view.Controller" target="view.tableViews.EmployeeTableView">
+      <point x="-35.178571428571445" y="-81.0" />
+      <point x="1142.9524999999999" y="925.0" />
+      <point x="829.0233333333333" y="925.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="view.tableViews.FilmTableView" target="service.GenericLabService">
+      <point x="-94.875" y="-48.0" />
+      <point x="1485.7733333333333" y="687.0" />
+      <point x="984.785714285714" y="687.0" />
+      <point x="42.28571428571422" y="25.5" />
+    </edge>
+    <edge source="view.Controller" target="service.GenericLabService">
+      <point x="-21.10714285714289" y="-81.0" />
+      <point x="1157.0239285714285" y="915.0" />
+      <point x="981.0233333333333" y="915.0" />
+      <point x="981.0233333333333" y="707.0" />
+      <point x="942.4999999999998" y="707.0" />
+      <point x="0.0" y="25.5" />
+    </edge>
+    <edge source="view.tableViews.LabTableView" target="dao.entities.LabEntity">
+      <point x="31.25" y="-48.0" />
+      <point x="1256.4114285714286" y="707.0" />
+      <point x="1266.69" y="707.0" />
+      <point x="76.66666666666669" y="213.0" />
+    </edge>
+    <edge source="view.Controller" target="view.tableViews.LabTableView">
+      <point x="7.035714285714221" y="-81.0" />
+      <point x="1185.1667857142857" y="905.0" />
+      <point x="1225.1614285714286" y="905.0" />
+      <point x="0.0" y="48.0" />
+    </edge>
+    <edge source="view.Controller" target="view.tableViews.GenericTableView">
+      <point x="21.10714285714289" y="-81.0" />
+      <point x="1199.2382142857143" y="915.0" />
+      <point x="1441.69" y="915.0" />
+      <point x="1441.69" y="747.0" />
+      <point x="1483.9460714285715" y="747.0" />
+      <point x="16.66666666666663" y="36.5" />
+    </edge>
+    <edge source="view.Controller" target="dao.entities.EmployeeEntity">
+      <point x="-63.32142857142867" y="-81.0" />
+      <point x="1114.8096428571428" y="945.0" />
+      <point x="389.91916666666657" y="945.0" />
+      <point x="389.91916666666657" y="677.0" />
+      <point x="596.25" y="677.0" />
+      <point x="-82.33333333333326" y="202.0" />
+    </edge>
+    <edge source="view.tableViews.ClientTableView" target="dao.entities.ClientEntity">
+      <point x="-97.875" y="-48.0" />
+      <point x="439.1483333333333" y="667.0" />
+      <point x="397.7499999999998" y="667.0" />
+      <point x="0.0" y="268.0" />
+    </edge>
+    <edge source="view.Controller" target="dao.HibernateSessionFactory">
+      <point x="91.46428571428578" y="-81.0" />
+      <point x="1269.5953571428572" y="965.0" />
+      <point x="2212.4252380952385" y="965.0" />
+      <point x="0.0" y="59.0" />
+    </edge>
+    <edge source="view.tableViews.EmployeeTableView" target="service.GenericLabService">
+      <point x="35.375" y="-48.0" />
+      <point x="864.3983333333333" y="707.0" />
+      <point x="921.3571428571427" y="707.0" />
+      <point x="-21.14285714285711" y="25.5" />
+    </edge>
+    <edge source="view.tableViews.FilmTableView" target="dao.entities.FilmEntity">
+      <point x="94.875" y="-48.0" />
+      <point x="1675.5233333333333" y="747.0" />
+      <point x="1728.6752380952385" y="747.0" />
+      <point x="0.0" y="202.0" />
+    </edge>
+    <edge source="view.tableViews.EmployeeTableView" target="dao.entities.EmployeeEntity">
+      <point x="-35.375" y="-48.0" />
+      <point x="793.6483333333333" y="677.0" />
+      <point x="760.9166666666665" y="677.0" />
+      <point x="82.33333333333326" y="202.0" />
+    </edge>
+    <edge source="view.tableViews.EmployeeTableView" target="view.tableViews.GenericTableView">
+      <point x="106.125" y="-48.0" />
+      <point x="935.1483333333333" y="727.0" />
+      <point x="1417.279404761905" y="727.0" />
+      <point x="-50.0" y="36.5" />
+    </edge>
+    <edge source="view.tableViews.ClientTableView" target="service.GenericLabService">
+      <point x="32.625" y="-48.0" />
+      <point x="569.6483333333333" y="697.0" />
+      <point x="900.2142857142856" y="697.0" />
+      <point x="-42.28571428571422" y="25.5" />
+    </edge>
+    <edge source="service.GenericLabServiceImpl" target="dao.GenericLabDAO">
+      <point x="0.0" y="-37.0" />
+      <point x="37.0" y="25.5" />
+    </edge>
+    <edge source="view.Controller" target="dao.entities.LabEntity">
+      <point x="-7.035714285714221" y="-81.0" />
+      <point x="1171.0953571428572" y="905.0" />
+      <point x="1054.3333333333333" y="905.0" />
+      <point x="1054.3333333333333" y="707.0" />
+      <point x="1113.3566666666666" y="707.0" />
+      <point x="-76.66666666666669" y="213.0" />
+    </edge>
+    <edge source="view.Controller" target="dao.entities.ClientEntity">
+      <point x="-77.39285714285722" y="-81.0" />
+      <point x="1100.738214285714" y="955.0" />
+      <point x="346.4999999999998" y="955.0" />
+      <point x="346.4999999999998" y="677.0" />
+      <point x="326.7499999999998" y="677.0" />
+      <point x="-71.0" y="268.0" />
+    </edge>
+    <edge source="view.tableViews.LabOrderTableView" target="dao.entities.LabOrderEntity">
+      <point x="105.375" y="-48.0" />
+      <point x="1973.0233333333333" y="747.0" />
+      <point x="2019.0085714285717" y="747.0" />
+      <point x="1.4210854715202004E-14" y="235.0" />
+    </edge>
+    <edge source="dao.GenericLabDAOImpl" target="dao.GenericLabDAO">
+      <point x="0.0" y="-48.0" />
+      <point x="113.5" y="76.0" />
+      <point x="163.5" y="76.0" />
+      <point x="-37.0" y="25.5" />
+    </edge>
+    <edge source="view.Controller" target="service.GenericLabServiceImpl">
+      <point x="-91.46428571428578" y="-81.0" />
+      <point x="1086.6667857142857" y="965.0" />
+      <point x="237.5" y="965.0" />
+      <point x="0.0" y="37.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="0.67495590828924" x="1413.7828522237078" y="563.9148951348278" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Methods</Category>
+    <Category>Fields</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
