@@ -3,11 +3,7 @@ package view;
 import dao.HibernateSessionFactory;
 import dao.entities.*;
 import javafx.fxml.FXML;
-import javafx.scene.chart.BarChart;
 import javafx.scene.control.SplitPane;
-import javafx.scene.control.Tab;
-import javafx.scene.control.TableView;
-import javafx.scene.layout.BorderPane;
 import service.GenericLabService;
 import service.GenericLabServiceImpl;
 import view.tableViews.*;
@@ -45,7 +41,7 @@ public class Controller {
                 HibernateSessionFactory.getSessionFactory(), ClientEntity.class);
 
         GenericTableView clientView = new ClientTableView(clientService);
-        clientPane.getItems().addAll(clientView.getTableView(), clientView.getTableView());
+        clientPane.getItems().addAll(clientView.getTableView(), clientView.getBarChart());
 
 
         // Film
@@ -53,7 +49,7 @@ public class Controller {
                 HibernateSessionFactory.getSessionFactory(), FilmEntity.class);
 
         GenericTableView filmView = new FilmTableView(filmService);
-        filmPane.getItems().addAll(filmView.getTableView(), filmView.getTableView());
+        filmPane.getItems().addAll(filmView.getTableView(), filmView.getBarChart());
 
 
         // LabOrder
@@ -69,7 +65,7 @@ public class Controller {
                 HibernateSessionFactory.getSessionFactory(), EmployeeEntity.class);
 
         GenericTableView employeeView = new EmployeeTableView(employeeService);
-        employeePane.getItems().addAll(employeeView.getTableView(), employeeView.getTableView());
+        employeePane.getItems().addAll(employeeView.getTableView(), employeeView.getBarChart());
     }
 
 }

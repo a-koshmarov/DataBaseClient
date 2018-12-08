@@ -4,6 +4,9 @@ import dao.entities.EmployeeEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.BarChart;
+import javafx.scene.chart.CategoryAxis;
+import javafx.scene.chart.NumberAxis;
+import javafx.scene.chart.XYChart;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -11,22 +14,18 @@ import service.GenericLabService;
 
 import java.util.Date;
 
-public class EmployeeTableView implements GenericTableView{
+public class EmployeeTableView implements GenericTableView {
 
-    private GenericLabService<EmployeeEntity> service;
     private ObservableList<EmployeeEntity> entities;
-    private TableView<EmployeeEntity> tableView;
 
     public EmployeeTableView(GenericLabService<EmployeeEntity> service){
-        this.service = service;
+        this.entities = FXCollections.observableList(service.getAll());
     }
 
     @SuppressWarnings("unchecked")
     public TableView getTableView() {
-        tableView = new TableView<EmployeeEntity>();
+        TableView<EmployeeEntity> tableView = new TableView<EmployeeEntity>();
         tableView.setEditable(true);
-
-        entities = FXCollections.observableList(service.getAll());
 
         TableColumn idCol = new TableColumn("ID");
         idCol.setCellValueFactory(
@@ -53,7 +52,22 @@ public class EmployeeTableView implements GenericTableView{
         return tableView;
     }
 
+    @SuppressWarnings("unchecked")
     public BarChart getBarChart() {
-        return null;
+        final CategoryAxis xAxis = new CategoryAxis();
+        xAxis.setLabel("Full name");
+
+        final NumberAxis yAxis = new NumberAxis();
+        yAxis.setLabel("Order count");
+
+        XYChart.Series series = new XYChart.Series();
+
+        BarChart<String, Number> barChart = new BarChart<String, Number>(xAxis, yAxis);
+        for (EmployeeEntity entity : entities) {
+            series.getData().add(new XYChart.Data(entity.getFullName(), entity.getOrderCount()));
+        }
+
+        barChart.getData().addAll(series);
+        return barChart;
     }
 }

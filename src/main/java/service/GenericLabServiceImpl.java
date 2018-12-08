@@ -10,7 +10,7 @@ public class GenericLabServiceImpl<T> implements GenericLabService<T> {
 
     private GenericLabDAO<T> dao;
 
-    public GenericLabServiceImpl(SessionFactory sessionFactory, Class<T> tClass){
+    public GenericLabServiceImpl(SessionFactory sessionFactory, Class<T> tClass) {
         this.dao = new GenericLabDAOImpl<T>(sessionFactory, tClass);
     }
 
