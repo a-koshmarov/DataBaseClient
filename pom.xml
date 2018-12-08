@@ -27,8 +27,6 @@
             <version>7.0.0.jre10</version>
         </dependency>
 
-    </dependencies>
-
 
         <!-- Hibernate -->
         <!-- to start need only this -->
