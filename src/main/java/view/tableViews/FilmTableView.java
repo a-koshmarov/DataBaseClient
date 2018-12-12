@@ -3,14 +3,14 @@ package view.tableViews;
 import dao.entities.FilmEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.scene.chart.XYChart;
+import javafx.geometry.Side;
+import javafx.scene.chart.*;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import service.GenericLabService;
+
+import java.util.ArrayList;
 
 public class FilmTableView implements GenericTableView {
 
@@ -51,21 +51,36 @@ public class FilmTableView implements GenericTableView {
     }
 
     @SuppressWarnings("unchecked")
-    public BarChart getBarChart() {
-        final CategoryAxis xAxis = new CategoryAxis();
-        xAxis.setLabel("Film ID");
+    public PieChart getChart() {
+        ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
-        final NumberAxis yAxis = new NumberAxis();
-        yAxis.setLabel("number of shots");
-
-        XYChart.Series series = new XYChart.Series();
-
-        BarChart<String, Number> barChart = new BarChart<String, Number>(xAxis, yAxis);
-        for (FilmEntity entity : entities){
-            series.getData().add(new XYChart.Data(Integer.toString(entity.getFilmId()), entity.getShots()));
+        for (Integer iso : getIsos()){
+            pieChartData.add(new PieChart.Data("ISO "+iso+": "+getShotsPerIso(iso), getShotsPerIso(iso)));
         }
+        PieChart pieChart = new PieChart(pieChartData);
+        pieChart.setTitle("Shots per ISO");
+        pieChart.setLabelLineLength(30);
+        pieChart.setLegendSide(Side.LEFT);
+        return pieChart;
+    }
 
-        barChart.getData().addAll(series);
-        return barChart;
+    private ArrayList<Integer> getIsos(){
+        ArrayList<Integer> isos = new ArrayList<>();
+        for (FilmEntity entity : entities){
+            if (!isos.contains(entity.getIso())){
+                isos.add(entity.getIso());
+            }
+        }
+        return isos;
+    }
+
+    private int getShotsPerIso(Integer iso){
+        int count = 0;
+        for(FilmEntity entity : entities){
+            if (entity.getIso().equals(iso)){
+                count+=entity.getShots();
+            }
+        }
+        return count;
     }
 }

@@ -58,7 +58,7 @@ public class LabOrderTableView implements GenericTableView {
     }
 
     @SuppressWarnings("unchecked")
-    public BarChart getBarChart() {
+    public BarChart getChart() {
         final CategoryAxis xAxis = new CategoryAxis();
         xAxis.setLabel("Order ID");
 

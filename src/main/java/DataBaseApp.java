@@ -10,10 +10,10 @@ import java.io.IOException;
 public class DataBaseApp extends Application {
 
     public void start(Stage stage) throws IOException {
-        Parent root=(Parent) FXMLLoader.load(getClass().getClassLoader().getResource("LabView.fxml"));
-        Scene scene=new Scene(root);
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("LabView.fxml"));
+        Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.setTitle("Result Analysis System");
+        stage.setTitle("Data Base Client");
         stage.show();
     }
 

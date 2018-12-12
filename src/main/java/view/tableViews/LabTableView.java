@@ -51,7 +51,7 @@ public class LabTableView implements GenericTableView {
         return tableView;
     }
     @SuppressWarnings("unchecked")
-    public BarChart getBarChart() {
+    public BarChart getChart() {
         final CategoryAxis xAxis = new CategoryAxis();
         xAxis.setLabel("Laboratory name");
 

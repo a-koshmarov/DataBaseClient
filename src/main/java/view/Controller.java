@@ -33,7 +33,7 @@ public class Controller {
                 HibernateSessionFactory.getSessionFactory(), LabEntity.class);
 
         GenericTableView labView = new LabTableView(labService);
-        labPane.getItems().addAll(labView.getTableView(), labView.getBarChart());
+        labPane.getItems().addAll(labView.getTableView(), labView.getChart());
 
 
         // Client
@@ -41,7 +41,7 @@ public class Controller {
                 HibernateSessionFactory.getSessionFactory(), ClientEntity.class);
 
         GenericTableView clientView = new ClientTableView(clientService);
-        clientPane.getItems().addAll(clientView.getTableView(), clientView.getBarChart());
+        clientPane.getItems().addAll(clientView.getTableView(), clientView.getChart());
 
 
         // Film
@@ -49,7 +49,7 @@ public class Controller {
                 HibernateSessionFactory.getSessionFactory(), FilmEntity.class);
 
         GenericTableView filmView = new FilmTableView(filmService);
-        filmPane.getItems().addAll(filmView.getTableView(), filmView.getBarChart());
+        filmPane.getItems().addAll(filmView.getTableView(), filmView.getChart());
 
 
         // LabOrder
@@ -57,7 +57,7 @@ public class Controller {
                 HibernateSessionFactory.getSessionFactory(), LabOrderEntity.class);
 
         GenericTableView labOrderView = new LabOrderTableView(labOrderService);
-        labOrderPane.getItems().addAll(labOrderView.getTableView(), labOrderView.getBarChart());
+        labOrderPane.getItems().addAll(labOrderView.getTableView(), labOrderView.getChart());
 
 
         //Employee
@@ -65,7 +65,7 @@ public class Controller {
                 HibernateSessionFactory.getSessionFactory(), EmployeeEntity.class);
 
         GenericTableView employeeView = new EmployeeTableView(employeeService);
-        employeePane.getItems().addAll(employeeView.getTableView(), employeeView.getBarChart());
+        employeePane.getItems().addAll(employeeView.getTableView(), employeeView.getChart());
     }
 
 }

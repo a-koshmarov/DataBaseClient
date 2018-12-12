@@ -1,7 +1,6 @@
 package view.tableViews;
 
 import dao.entities.ClientEntity;
-import dao.entities.FilmEntity;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.scene.chart.BarChart;
@@ -63,7 +62,7 @@ public class ClientTableView implements GenericTableView {
     }
 
     @SuppressWarnings("unchecked")
-    public BarChart getBarChart() {
+    public BarChart getChart() {
         final CategoryAxis xAxis = new CategoryAxis();
         xAxis.setLabel("Full name");
 
@@ -72,7 +71,7 @@ public class ClientTableView implements GenericTableView {
 
         XYChart.Series series = new XYChart.Series();
 
-        BarChart<String, Number> barChart = new BarChart<String, Number>(xAxis, yAxis);
+        BarChart<String, Number> barChart = new BarChart<>(xAxis, yAxis);
         for (ClientEntity entity : entities){
             series.getData().add(new XYChart.Data(entity.getFullName(), entity.getDiscount()));
         }
