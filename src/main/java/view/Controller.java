@@ -4,6 +4,8 @@ import dao.HibernateSessionFactory;
 import dao.entities.*;
 import javafx.fxml.FXML;
 import javafx.scene.control.SplitPane;
+import service.FilmServiceImpl;
+import service.GenericFilmService;
 import service.GenericLabService;
 import service.GenericLabServiceImpl;
 import view.tableViews.*;
@@ -45,7 +47,7 @@ public class Controller {
 
 
         // Film
-        GenericLabService<FilmEntity> filmService = new GenericLabServiceImpl<FilmEntity>(
+        GenericFilmService filmService = new FilmServiceImpl(
                 HibernateSessionFactory.getSessionFactory(), FilmEntity.class);
 
         GenericTableView filmView = new FilmTableView(filmService);

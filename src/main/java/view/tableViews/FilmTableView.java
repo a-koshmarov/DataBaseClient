@@ -8,6 +8,7 @@ import javafx.scene.chart.*;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import service.GenericFilmService;
 import service.GenericLabService;
 
 import java.util.ArrayList;
@@ -15,9 +16,11 @@ import java.util.ArrayList;
 public class FilmTableView implements GenericTableView {
 
     private ObservableList<FilmEntity> entities;
+    private GenericFilmService service;
 
-    public FilmTableView(GenericLabService<FilmEntity> service){
+    public FilmTableView(GenericFilmService service){
         this.entities = FXCollections.observableList(service.getAll());
+        this.service = service;
     }
 
     @SuppressWarnings("unchecked")
@@ -54,8 +57,8 @@ public class FilmTableView implements GenericTableView {
     public PieChart getChart() {
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList();
 
-        for (Integer iso : getIsos()){
-            pieChartData.add(new PieChart.Data("ISO "+iso+": "+getShotsPerIso(iso), getShotsPerIso(iso)));
+        for (Integer iso : service.getIsos()){
+            pieChartData.add(new PieChart.Data("ISO "+iso+": "+service.getShotsPerIso(iso), service.getShotsPerIso(iso)));
         }
         PieChart pieChart = new PieChart(pieChartData);
         pieChart.setTitle("Shots per ISO");
@@ -64,23 +67,5 @@ public class FilmTableView implements GenericTableView {
         return pieChart;
     }
 
-    private ArrayList<Integer> getIsos(){
-        ArrayList<Integer> isos = new ArrayList<>();
-        for (FilmEntity entity : entities){
-            if (!isos.contains(entity.getIso())){
-                isos.add(entity.getIso());
-            }
-        }
-        return isos;
-    }
 
-    private int getShotsPerIso(Integer iso){
-        int count = 0;
-        for(FilmEntity entity : entities){
-            if (entity.getIso().equals(iso)){
-                count+=entity.getShots();
-            }
-        }
-        return count;
-    }
 }
